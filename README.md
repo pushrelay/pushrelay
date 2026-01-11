@@ -1,150 +1,167 @@
-📣 PushRelay – Push Notifications for WordPress
+# 🔔 PushRelay – Push Notifications for WordPress
 
-PushRelay is a lightweight, privacy-first WordPress plugin that lets you send web push notifications to your visitors with real-time campaign tracking, automatic post notifications, and a clean admin experience.
+![WordPress Version](https://img.shields.io/badge/WordPress-6.0%2B-blue.svg)
+[![PHP Version](https://img.shields.io/badge/PHP-7.4--8.3-purple.svg)](https://www.php.net/)
+[![License](https://img.shields.io/badge/License-GPLv2%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+![Status](https://img.shields.io/badge/Status-Stable-success.svg)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-pushrelay-black.svg?logo=github)](https://github.com/pushrelay/pushrelay)
 
-Built for performance, stability, and long-term maintainability.
+PushRelay is a **lightweight, privacy-first WordPress plugin** that lets you send web push notifications to your visitors with **real-time campaign tracking**, **automatic post notifications**, and a **clean, modern admin experience**.
 
-✨ Features
+Built for **performance**, **stability**, and **long-term maintainability**.
 
-🔔 Manual Push Campaigns
+---
+
+## 🚀 Why PushRelay?
+
+PushRelay is designed for site owners who want **reliable push notifications without bloat**:
+
+- No tracking pixels
+- No personal data stored in WordPress
+- No page refreshes in the admin UI
+- Safe background processing
+- Built with long-term stability in mind
+
+---
+
+## ✨ Features
+
+### 🔔 Manual Push Campaigns
 Create and send push notifications directly from WordPress.
 
-📝 Automatic Post Notifications
+### 📰 Automatic Post Notifications
 Automatically send notifications when new posts are published.
 
-📊 Live Campaign Status Updates
-Campaign status updates in real time — no page refresh required.
+### 🔄 Live Campaign Status Updates
+Campaign status updates in real time — **no page refresh required**.
 
-📈 Campaign Analytics
-Track sent, displayed, clicked notifications and CTR.
+### 📊 Campaign Analytics
+Track sent, displayed, clicked notifications, and CTR.
 
-⚡ Performance-Focused
+### ⚡ Performance-Focused
 Smart caching, safe background processing, and minimal overhead.
 
-🔐 Privacy-First
-No tracking pixels, no personal data stored in WordPress.
+### 🔒 Privacy-First
+No tracking pixels. No personal data stored in WordPress.
 
-🧩 WooCommerce Support
+### 🛒 WooCommerce Support
 Optional integration for WooCommerce events.
 
-🛠 Requirements
+---
 
-WordPress 6.0+
+## 🧩 Requirements
 
-PHP 7.4 – 8.3
+- WordPress **6.0+**
+- PHP **7.4 – 8.3**
+- HTTPS enabled (required for web push)
+- Modern browser support (Chrome, Edge, Firefox)
 
-HTTPS enabled (required for web push)
+---
 
-Modern browser support (Chrome, Edge, Firefox)
+## 📦 Installation
 
-🚀 Installation
-From WordPress.org
+### From WordPress.org
 
-Go to Plugins → Add New
+1. Go to **Plugins → Add New**
+2. Search for **PushRelay**
+3. Click **Install → Activate**
+4. Go to **PushRelay → Settings** to configure
 
-Search for PushRelay
+### Manual Installation
 
-Click Install → Activate
+1. Download the plugin ZIP
+2. Upload to `wp-content/plugins/pushrelay`
+3. Activate the plugin
+4. Configure settings
 
-Go to PushRelay → Settings to configure
+---
 
-Manual Installation
+## ⚙️ Configuration
 
-Download the plugin ZIP
-
-Upload to /wp-content/plugins/pushrelay
-
-Activate the plugin
-
-Configure settings
-
-⚙️ Configuration
-
-Go to PushRelay → Settings
-
-Enter your API credentials
-
-Configure auto-push behavior
-
-Save settings
+1. Go to **PushRelay → Settings**
+2. Enter your API credentials
+3. Configure auto-push behavior
+4. Save settings
 
 Once configured, PushRelay is ready to send notifications.
 
-📡 Campaign Lifecycle
+---
+
+## 🔁 Campaign Lifecycle
 
 Campaigns go through the following statuses:
 
-queued
+- `queued`
+- `processing`
+- `sent`
+- `completed`
+- `failed`
 
-processing
+Campaign status updates automatically in the admin UI **without reloading the page**.
 
-sent
+---
 
-completed
+## 🤖 Auto-Generated Campaigns
 
-failed
+When **Auto Push Notifications** are enabled:
 
-Campaign status updates automatically in the admin UI without reloading the page.
+- A campaign is automatically created when a post is published
+- These campaigns are clearly labeled as **auto-generated**
+- They appear alongside manual campaigns for full transparency
 
-🤖 Auto-Generated Campaigns
+---
 
-When Auto Push Notifications are enabled:
+## 🛡️ Stability & Safety
 
-A campaign is automatically created when a post is published
+PushRelay is designed with safety in mind:
 
-These campaigns are clearly labeled as auto-generated
+- No database schema changes during updates
+- No breaking API changes
+- Safe background processing
+- PHP 8.2 compatible
+- WordPress Plugin Review Team compliant
 
-They appear alongside manual campaigns for full transparency
+---
 
-🧪 Stability & Safety
+## 🧑‍💻 Developer Notes
 
-PushRelay is designed with:
+- No custom REST endpoints added without necessity
+- All background tasks are lock-protected
+- Debug logs automatically redact sensitive data
+- Rate-limited API calls handled gracefully
 
-No database schema changes during updates
+---
 
-No breaking API changes
-
-Safe background processing
-
-PHP 8.2+ compatibility
-
-WordPress Plugin Review Team compliance
-
-🧩 Developer Notes
-
-No custom REST endpoints added without necessity
-
-All background tasks are lock-protected
-
-Debug logs automatically redact sensitive data
-
-Rate-limited API calls handled gracefully
-
-🗺 Roadmap
+## 🛣️ Roadmap
 
 Planned improvements:
 
-PHP 8.2 deprecation cleanup (v1.7.1)
+- PHP 8.2 deprecation cleanup (v1.7.1)
+- Improved onboarding flow
+- Enhanced analytics views
+- Optional campaign filters (manual vs auto)
+- Advanced segmentation
 
-Improved onboarding flow
+---
 
-Enhanced analytics views
+## 📄 License
 
-Optional campaign filters (manual vs auto)
+PushRelay is licensed under the **GNU General Public License v2.0 or later**.
 
-Advanced segmentation
+---
 
-📄 License
+## 👤 Author
 
-PushRelay is licensed under the GNU General Public License v2.0 or later.
-
-👤 Author
-
-PushRelay Team
+**PushRelay Team**  
 Built with long-term stability and WordPress best practices in mind.
 
-🤝 Contributing
+---
+
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome.
 
-Please open an issue before submitting major changes.
+- GitHub repository: https://github.com/pushrelay/pushrelay
+- Please open an issue before submitting major changes
+
+All contributions should prioritize stability, backward compatibility, and WordPress.org compliance.
