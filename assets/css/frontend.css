@@ -1,0 +1,613 @@
+/**
+ * PushRelay Frontend Styles
+ * 
+ * Styles for subscription widgets, buttons, and frontend elements
+ * 
+ * @package PushRelay
+ * @since 2.0.0
+ */
+
+/* ========================================
+   VARIABLES
+   ======================================== */
+:root {
+    --pushrelay-primary: #0073aa;
+    --pushrelay-primary-hover: #005177;
+    --pushrelay-success: #28a745;
+    --pushrelay-white: #ffffff;
+    --pushrelay-light-gray: #f5f5f5;
+    --pushrelay-text: #333333;
+    --pushrelay-text-light: #666666;
+    --pushrelay-border: #dddddd;
+    --pushrelay-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --pushrelay-radius: 8px;
+    --pushrelay-transition: all 0.3s ease;
+}
+
+/* ========================================
+   SUBSCRIPTION BUTTON
+   ======================================== */
+.pushrelay-subscribe-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--pushrelay-primary);
+    color: var(--pushrelay-white);
+    border: none;
+    border-radius: var(--pushrelay-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--pushrelay-transition);
+    text-decoration: none;
+    box-shadow: var(--pushrelay-shadow);
+}
+
+.pushrelay-subscribe-button:hover {
+    background: var(--pushrelay-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 115, 170, 0.3);
+    color: var(--pushrelay-white);
+}
+
+.pushrelay-subscribe-button:active {
+    transform: translateY(0);
+}
+
+.pushrelay-subscribe-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.pushrelay-subscribe-button.subscribed {
+    background: var(--pushrelay-success);
+}
+
+.pushrelay-subscribe-button.subscribed:hover {
+    background: #218838;
+}
+
+.pushrelay-bell-icon {
+    font-size: 20px;
+    animation: pushrelay-bell-ring 2s infinite;
+}
+
+@keyframes pushrelay-bell-ring {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(-10deg); }
+    20%, 40% { transform: rotate(10deg); }
+}
+
+.pushrelay-subscribe-button:hover .pushrelay-bell-icon {
+    animation: pushrelay-bell-ring 0.5s;
+}
+
+/* ========================================
+   SUBSCRIPTION WIDGET
+   ======================================== */
+.pushrelay-widget {
+    background: var(--pushrelay-white);
+    border-radius: var(--pushrelay-radius);
+    box-shadow: var(--pushrelay-shadow);
+    padding: 24px;
+    margin: 20px 0;
+    max-width: 400px;
+}
+
+.pushrelay-widget-inner {
+    text-align: center;
+}
+
+.pushrelay-widget-title {
+    margin: 0 0 12px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--pushrelay-text);
+}
+
+.pushrelay-widget-description {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    color: var(--pushrelay-text-light);
+    line-height: 1.6;
+}
+
+.pushrelay-widget-actions {
+    margin: 20px 0;
+}
+
+.pushrelay-subscriber-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px 0;
+    padding: 12px;
+    background: var(--pushrelay-light-gray);
+    border-radius: var(--pushrelay-radius);
+    font-size: 14px;
+    color: var(--pushrelay-text);
+}
+
+.pushrelay-count-icon {
+    font-size: 18px;
+}
+
+.pushrelay-privacy-note {
+    margin: 16px 0 0 0;
+    font-size: 12px;
+    color: var(--pushrelay-text-light);
+    font-style: italic;
+}
+
+/* ========================================
+   SUBSCRIPTION STATUS
+   ======================================== */
+.pushrelay-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pushrelay-status-icon {
+    font-size: 16px;
+}
+
+.pushrelay-subscribed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.pushrelay-not-subscribed {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* ========================================
+   NOTIFICATION PREVIEW
+   ======================================== */
+.pushrelay-notification-preview {
+    max-width: 400px;
+    background: var(--pushrelay-white);
+    border-radius: var(--pushrelay-radius);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.pushrelay-notification-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.pushrelay-notification-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pushrelay-notification-content {
+    padding: 16px;
+}
+
+.pushrelay-notification-title {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--pushrelay-text);
+}
+
+.pushrelay-notification-description {
+    margin: 0;
+    font-size: 14px;
+    color: var(--pushrelay-text-light);
+    line-height: 1.5;
+}
+
+.pushrelay-notification-site {
+    padding: 12px 16px;
+    background: var(--pushrelay-light-gray);
+    font-size: 12px;
+    color: var(--pushrelay-text-light);
+    border-top: 1px solid var(--pushrelay-border);
+}
+
+/* ========================================
+   SHORTCODE STATS
+   ======================================== */
+.pushrelay-stats-shortcode {
+    margin: 20px 0;
+}
+
+.pushrelay-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.pushrelay-stats-list .pushrelay-stat-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: var(--pushrelay-light-gray);
+    border-radius: var(--pushrelay-radius);
+}
+
+.pushrelay-stats-inline {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pushrelay-stat-item {
+    text-align: center;
+}
+
+.pushrelay-stats-grid .pushrelay-stat-item {
+    padding: 20px;
+    background: var(--pushrelay-light-gray);
+    border-radius: var(--pushrelay-radius);
+    transition: var(--pushrelay-transition);
+}
+
+.pushrelay-stats-grid .pushrelay-stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--pushrelay-shadow);
+}
+
+.pushrelay-stat-label {
+    display: block;
+    font-size: 14px;
+    color: var(--pushrelay-text-light);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.pushrelay-stat-value {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--pushrelay-primary);
+    line-height: 1;
+}
+
+/* ========================================
+   RECENT CAMPAIGNS
+   ======================================== */
+.pushrelay-recent-campaigns {
+    margin: 20px 0;
+}
+
+.pushrelay-campaign-item {
+    padding: 16px;
+    margin-bottom: 16px;
+    background: var(--pushrelay-white);
+    border-left: 4px solid var(--pushrelay-primary);
+    border-radius: var(--pushrelay-radius);
+    box-shadow: var(--pushrelay-shadow);
+    transition: var(--pushrelay-transition);
+}
+
+.pushrelay-campaign-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pushrelay-campaign-title {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--pushrelay-text);
+}
+
+.pushrelay-campaign-stats {
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--pushrelay-text-light);
+}
+
+.pushrelay-campaign-stats .stat {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.pushrelay-campaign-date {
+    font-size: 12px;
+    color: var(--pushrelay-text-light);
+    margin-top: 8px;
+}
+
+/* ========================================
+   HEALTH SCORE
+   ======================================== */
+.pushrelay-health-score {
+    display: inline-block;
+    padding: 16px 24px;
+    background: var(--pushrelay-light-gray);
+    border-radius: var(--pushrelay-radius);
+    text-align: center;
+}
+
+.pushrelay-health-label {
+    display: block;
+    font-size: 14px;
+    color: var(--pushrelay-text-light);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.pushrelay-health-value {
+    display: block;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* ========================================
+   FLOATING SUBSCRIPTION PROMPT
+   ======================================== */
+.pushrelay-float-prompt {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 350px;
+    background: var(--pushrelay-white);
+    border-radius: var(--pushrelay-radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 9999;
+    animation: pushrelay-slide-up 0.4s ease;
+}
+
+@keyframes pushrelay-slide-up {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pushrelay-float-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--pushrelay-text-light);
+    padding: 4px;
+    line-height: 1;
+}
+
+.pushrelay-float-close:hover {
+    color: var(--pushrelay-text);
+}
+
+.pushrelay-float-content {
+    padding-right: 30px;
+}
+
+.pushrelay-float-title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--pushrelay-text);
+}
+
+.pushrelay-float-description {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    color: var(--pushrelay-text-light);
+    line-height: 1.5;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .pushrelay-widget {
+        max-width: 100%;
+    }
+    
+    .pushrelay-float-prompt {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+        bottom: 10px;
+    }
+    
+    .pushrelay-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pushrelay-stats-inline {
+        flex-direction: column;
+    }
+    
+    .pushrelay-subscribe-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .pushrelay-widget {
+        padding: 16px;
+    }
+    
+    .pushrelay-widget-title {
+        font-size: 18px;
+    }
+    
+    .pushrelay-subscribe-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .pushrelay-stat-value {
+        font-size: 24px;
+    }
+    
+    .pushrelay-notification-preview {
+        max-width: 100%;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+.pushrelay-subscribe-button:focus,
+.pushrelay-float-close:focus {
+    outline: 2px solid var(--pushrelay-primary);
+    outline-offset: 2px;
+}
+
+.pushrelay-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    .pushrelay-widget,
+    .pushrelay-notification-preview,
+    .pushrelay-campaign-item,
+    .pushrelay-float-prompt {
+        background: #1e1e1e;
+        color: #e0e0e0;
+        border-color: #333333;
+    }
+    
+    .pushrelay-widget-title,
+    .pushrelay-notification-title,
+    .pushrelay-campaign-title,
+    .pushrelay-float-title {
+        color: #ffffff;
+    }
+    
+    .pushrelay-widget-description,
+    .pushrelay-notification-description,
+    .pushrelay-campaign-stats,
+    .pushrelay-float-description {
+        color: #b0b0b0;
+    }
+    
+    .pushrelay-subscriber-count,
+    .pushrelay-stat-item,
+    .pushrelay-health-score {
+        background: #2a2a2a;
+    }
+    
+    .pushrelay-notification-site {
+        background: #2a2a2a;
+        border-color: #333333;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    .pushrelay-subscribe-button,
+    .pushrelay-float-prompt {
+        display: none;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes pushrelay-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pushrelay-pulse {
+    animation: pushrelay-pulse 2s infinite;
+}
+
+@keyframes pushrelay-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.pushrelay-fade-in {
+    animation: pushrelay-fade-in 0.3s ease;
+}
+
+/* ========================================
+   RTL SUPPORT
+   ======================================== */
+[dir="rtl"] .pushrelay-campaign-item {
+    border-left: none;
+    border-right: 4px solid var(--pushrelay-primary);
+}
+
+[dir="rtl"] .pushrelay-float-prompt {
+    right: auto;
+    left: 20px;
+}
+
+[dir="rtl"] .pushrelay-float-close {
+    right: auto;
+    left: 10px;
+}
+
+[dir="rtl"] .pushrelay-float-content {
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+[dir="rtl"] .pushrelay-campaign-stats .stat {
+    margin-right: 0;
+    margin-left: 16px;
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR (for widgets)
+   ======================================== */
+.pushrelay-scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pushrelay-scrollable::-webkit-scrollbar-track {
+    background: var(--pushrelay-light-gray);
+    border-radius: 4px;
+}
+
+.pushrelay-scrollable::-webkit-scrollbar-thumb {
+    background: var(--pushrelay-primary);
+    border-radius: 4px;
+}
+
+.pushrelay-scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--pushrelay-primary-hover);
+}
